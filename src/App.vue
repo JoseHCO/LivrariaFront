@@ -1,23 +1,33 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <v-layout class="rounded rounded-md">
+    <v-app-bar color="surface-variant">
+      <v-btn to="/usuarios">
+        <span>Usuários</span>
+      </v-btn>
+      
+      <v-btn to="/livros">
+        <span>Livros</span>
+      </v-btn>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <v-btn to="/alugueis">
+        <span>Aluguel</span>
+      </v-btn>
+    </v-app-bar>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+    <v-navigation-drawer>
+    </v-navigation-drawer>
 
-  <RouterView />
+    <v-navigation-drawer location="right">
+    </v-navigation-drawer>
+
+    <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
+      <RouterView />
+    </v-main>
+  </v-layout>
 </template>
 
 <style scoped>
